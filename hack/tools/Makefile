@@ -44,6 +44,7 @@ GOIMPORTS          := $(BIN_DIR)/goimports
 KUBEBUILDER        := $(BIN_DIR)/kubebuilder
 KUBEVAL            := $(BIN_DIR)/kubeval
 GOBINDATA          := $(BIN_DIR)/gobindata
+GOBINDATAASSETFS   := $(BIN_DIR)/gobindataassetfs
 VALE               := $(BIN_DIR)/vale
 YTT                := $(BIN_DIR)/ytt
 KBLD               := $(BIN_DIR)/kbld
@@ -98,6 +99,11 @@ gobindata: $(GOBINDATA)
 $(GOBINDATA): go.mod # Build go-bindata
 	mkdir -p $(BIN_DIR)
 	go build -tags=tools -o $(BIN_DIR) github.com/shuLhan/go-bindata/...; mv $(BIN_DIR)/go-bindata $(GOBINDATA)
+
+gobindataassetfs: $(GOBINDATAASSETFS)
+$(GOBINDATAASSETFS): go.mod # Build go-bindata-assetfs
+	mkdir -p $(BIN_DIR)
+	go build -tags=tools -o $(BIN_DIR) github.com/elazarl/go-bindata-assetfs/...; mv $(BIN_DIR)/go-bindata-assetfs $(GOBINDATAASSETFS)
 
 vale: $(VALE)
 $(VALE):

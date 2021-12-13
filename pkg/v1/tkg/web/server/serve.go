@@ -106,8 +106,20 @@ func FileServerMiddleware(handler http.Handler) http.Handler {
 				w.Header().Add("Content-Type", "text/css")
 			}
 
-			fs := &assetfs.AssetFS{Asset: servermanifest.Asset, AssetDir: servermanifest.AssetDir, AssetInfo: servermanifest.AssetInfo, Prefix: "pkg/v1/tkg/web/dist/tkg-kickstart-ui", Fallback: "index.html"}
+			fs := &assetfs.AssetFS{Asset: servermanifest.Asset, AssetDir: servermanifest.AssetDir, AssetInfo: servermanifest.AssetInfo, Prefix: "pkg/v1/tkg/web/ui-platform/dist/ui-platform", Fallback: "index.html"}
 			http.FileServer(fs).ServeHTTP(w, r)
+
+// 			http.Handle("/", http.FileServer(http.Dir(*directory)))
+//             http.FileServer(http.Dir("./static/foo")).ServeHTTP(w, req)
+//
+// 			http.ListenAndServe(":3000", http.StripPrefix("/", http.HandlerFunc(func(rw http.ResponseWriter, req *http.Request) {
+//                 if bs, err := Asset(req.URL.Path); err != nil {
+//                     rw.WriteHeader(http.StatusNotFound)
+//                 } else {
+//                     var reader = bytes.NewBuffer(bs)
+//                     io.Copy(rw, reader)
+//                 }
+//             })))
 		}
 	})
 }

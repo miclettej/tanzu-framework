@@ -13,5 +13,6 @@ import (
 	_ "github.com/maxbrunsfeld/counterfeiter/v6"
 	_ "github.com/onsi/ginkgo/ginkgo"
 	_ "github.com/shuLhan/go-bindata"
+	_ "github.com/elazarl/go-bindata-assetfs"
 	_ "golang.org/x/tools/cmd/goimports"
 )

@@ -29,6 +29,7 @@ UI_DIR := pkg/v1/tkg/web
 GOLANGCI_LINT      := $(TOOLS_BIN_DIR)/golangci-lint
 GOIMPORTS          := $(TOOLS_BIN_DIR)/goimports
 GOBINDATA          := $(TOOLS_BIN_DIR)/gobindata
+GOBINDATAASSETFS   := $(TOOLS_BIN_DIR)/gobindataassetfs
 KUBEBUILDER        := $(TOOLS_BIN_DIR)/kubebuilder
 YTT                := $(TOOLS_BIN_DIR)/ytt
 KBLD               := $(TOOLS_BIN_DIR)/kbld
@@ -541,16 +542,16 @@ endif
 
 .PHONY: ui-dependencies
 ui-dependencies: update-npm-registry  ## install UI dependencies (node modules)
-	cd $(UI_DIR); NG_CLI_ANALYTICS=ci npm ci; cd ../
+	cd $(UI_DIR)/ui-platform; NG_CLI_ANALYTICS=ci npm ci; cd ../
 
 .PHONY: ui-build
 ui-build: ui-dependencies ## Install dependencies, then compile client UI for production
-	cd $(UI_DIR); npm run build:prod; cd ../
+	cd $(UI_DIR)/ui-platform; npm run build:all:prod; cd ../
 	$(MAKE) generate-ui-bindata
 
 .PHONY: ui-build-and-test
-ui-build-and-test: ui-dependencies ## Compile client UI for production and run tests
-	cd $(UI_DIR); npm run build:ci; cd ../
+ui-build-and-test: ui-dependencies ## TODO: temporarily disabled testing Compile client UI for production and run tests
+	cd $(UI_DIR)/ui-platform; npm run build:all:prod; cd ../
 	$(MAKE) generate-ui-bindata
 
 .PHONY: verify-ui-bindata
@@ -573,7 +574,7 @@ generate-fakes: ## Generate fakes for writing unit tests
 
 .PHONY: generate-ui-bindata
 generate-ui-bindata: $(GOBINDATA) ## Generate go-bindata for ui files
-	$(GOBINDATA) -mode=420 -modtime=1 -o=pkg/v1/tkg/manifest/server/zz_generated.bindata.go -pkg=server $(UI_DIR)/dist/...
+	$(GOBINDATA) -mode=420 -modtime=1 -o=pkg/v1/tkg/manifest/server/zz_generated.bindata.go -pkg=server $(UI_DIR)/ui-platform/dist/...
 	$(MAKE) fmt
 
 .PHONY: generate-telemetry-bindata

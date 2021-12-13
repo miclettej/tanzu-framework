@@ -1,0 +1,32 @@
+<!-- Main Container -->
+<clr-main-container>
+  <!-- Page header -->
+<!--  <tkg-kickstart-ui-header-bar></tkg-kickstart-ui-header-bar>-->
+  <div header-bar-root>
+    <header class="header header-6">
+      <div class="branding">
+        <a>
+          <span class="logo-24"></span>
+          <a class="title">
+            Tanzu
+          </a>
+        </a>
+      </div>
+      <div class="header-actions">
+        <button
+          class="btn btn-sm btn-header-action"
+          role="link"
+          aria-label="documentation">
+          Documentation
+        </button>
+      </div>
+    </header>
+  </div>
+  <!-- Page content -->
+  <div class="content-container">
+    <main class="content-area">
+      <button class="btn-primar" (click)="navigateToWizard()">Wizard</button>
+      <router-outlet></router-outlet>
+    </main>
+  </div>
+</clr-main-container>

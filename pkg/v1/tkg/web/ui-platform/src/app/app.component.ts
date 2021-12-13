@@ -7,7 +7,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'ui-platform';
+  title = 'ui-ui-platform';
 
   constructor(private router: Router) {
   }

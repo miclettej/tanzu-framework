@@ -2,14 +2,18 @@ module github.com/vmware-tanzu/tanzu-framework
 
 go 1.17
 
+replace (
+	github.com/vmware-tanzu/tanzu-framework/apis/cni => ./apis/cni
+	github.com/vmware-tanzu/tanzu-framework/apis/cpi => ./apis/cpi
+	sigs.k8s.io/cluster-api => sigs.k8s.io/cluster-api v1.1.3
+)
+
 // Legacy tags before v0.1.0 was created
 retract [v1.4.0-pre-alpha-1, v1.4.0-pre-alpha-2]
 
-replace sigs.k8s.io/cluster-api => sigs.k8s.io/cluster-api v1.1.3
-
 require (
 	cloud.google.com/go/storage v1.18.2
-	github.com/AlecAivazis/survey/v2 v2.1.1
+	github.com/AlecAivazis/survey/v2 v2.3.4
 	github.com/Azure/azure-sdk-for-go v58.1.0+incompatible
 	github.com/Azure/go-autorest/autorest v0.11.21
 	github.com/Azure/go-autorest/autorest/azure/auth v0.5.8
@@ -27,7 +31,7 @@ require (
 	github.com/docker/docker v20.10.12+incompatible
 	github.com/elazarl/go-bindata-assetfs v1.0.1
 	github.com/fatih/color v1.13.0
-	github.com/getkin/kin-openapi v0.76.0
+	github.com/getkin/kin-openapi v0.94.0
 	github.com/ghodss/yaml v1.0.0
 	github.com/go-ldap/ldap/v3 v3.3.0
 	github.com/go-logr/logr v1.2.2
@@ -54,7 +58,7 @@ require (
 	github.com/imdario/mergo v0.3.12
 	github.com/jeremywohl/flatten v1.0.1
 	github.com/jessevdk/go-flags v1.4.0
-	github.com/jinzhu/copier v0.2.8
+	github.com/jinzhu/copier v0.3.5
 	github.com/juju/fslock v0.0.0-20160525022230-4d5c94c67b4b
 	github.com/k14s/imgpkg v0.17.0
 	github.com/k14s/kbld v0.32.0
@@ -131,7 +135,6 @@ require (
 	github.com/Masterminds/semver/v3 v3.1.1 // indirect
 	github.com/Masterminds/sprig/v3 v3.2.2 // indirect
 	github.com/Microsoft/go-winio v0.5.1 // indirect
-	github.com/Netflix/go-expect v0.0.0-20190729225929-0e00d9168667 // indirect
 	github.com/PuerkitoBio/purell v1.1.1 // indirect
 	github.com/PuerkitoBio/urlesc v0.0.0-20170810143723-de5bf2ad4578 // indirect
 	github.com/alessio/shellescape v1.4.1 // indirect
@@ -183,7 +186,6 @@ require (
 	github.com/googleapis/gax-go/v2 v2.1.1 // indirect
 	github.com/hashicorp/go-version v1.4.0 // indirect
 	github.com/hashicorp/hcl v1.0.0 // indirect
-	github.com/hinshun/vt10x v0.0.0-20180809195222-d55458df857c // indirect
 	github.com/huandu/xstrings v1.3.2 // indirect
 	github.com/inconshreveable/mousetrap v1.0.0 // indirect
 	github.com/jmespath/go-jmespath v0.4.0 // indirect

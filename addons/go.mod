@@ -4,18 +4,23 @@ go 1.17
 
 replace (
 	github.com/vmware-tanzu/tanzu-framework => ../
+	github.com/vmware-tanzu/tanzu-framework/apis/cni => ../apis/cni
+	github.com/vmware-tanzu/tanzu-framework/apis/cpi => ../apis/cpi
 	sigs.k8s.io/cluster-api => sigs.k8s.io/cluster-api v1.1.3
 )
 
 require (
 	github.com/go-logr/logr v1.2.2
 	github.com/onsi/ginkgo v1.16.5
-	github.com/onsi/gomega v1.18.1
+	github.com/onsi/gomega v1.19.0
 	github.com/pkg/errors v0.9.1
 	github.com/vmware-tanzu/carvel-kapp-controller v0.25.0
 	github.com/vmware-tanzu/carvel-secretgen-controller v0.5.0
-	github.com/vmware-tanzu/carvel-vendir v0.24.0
+	github.com/vmware-tanzu/carvel-vendir v0.26.0
 	github.com/vmware-tanzu/tanzu-framework v0.9.0
+	github.com/vmware-tanzu/tanzu-framework/apis/cni v0.0.0-00010101000000-000000000000
+	github.com/vmware-tanzu/tanzu-framework/apis/cpi v0.0.0-00010101000000-000000000000
+	github.com/vmware-tanzu/vm-operator-api v0.1.4-0.20211202185235-43eb44c09ecd
 	gopkg.in/yaml.v2 v2.4.0
 	gopkg.in/yaml.v3 v3.0.0-20210107192922-496545a6307b
 	k8s.io/api v0.23.4
@@ -26,7 +31,7 @@ require (
 	k8s.io/utils v0.0.0-20220210201930-3a6ce19ff2f9
 	knative.dev/pkg v0.0.0-20220302134643-d2cdc682d974
 	sigs.k8s.io/cluster-api v1.1.3
-	sigs.k8s.io/cluster-api-provider-vsphere v1.1.0
+	sigs.k8s.io/cluster-api-provider-vsphere v1.1.1
 	sigs.k8s.io/controller-runtime v0.11.1
 )
 
@@ -61,6 +66,7 @@ require (
 	github.com/googleapis/gnostic v0.5.5 // indirect
 	github.com/imdario/mergo v0.3.12 // indirect
 	github.com/json-iterator/go v1.1.12 // indirect
+	github.com/k14s/semver/v4 v4.0.1-0.20210701191048-266d47ac6115 // indirect
 	github.com/matttproud/golang_protobuf_extensions v1.0.2-0.20181231171920-c182affec369 // indirect
 	github.com/modern-go/concurrent v0.0.0-20180306012644-bacd9c7ef1dd // indirect
 	github.com/modern-go/reflect2 v1.0.2 // indirect

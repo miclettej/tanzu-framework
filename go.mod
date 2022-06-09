@@ -110,7 +110,7 @@ require (
 	knative.dev/pkg v0.0.0-20220302134643-d2cdc682d974
 	sigs.k8s.io/cluster-api v1.1.3
 	sigs.k8s.io/cluster-api-provider-aws v1.1.0
-	sigs.k8s.io/cluster-api-provider-azure v1.2.1
+	sigs.k8s.io/cluster-api-provider-azure v1.3.1
 	sigs.k8s.io/cluster-api-provider-vsphere v1.1.0
 	sigs.k8s.io/cluster-api/test v1.1.2
 	sigs.k8s.io/controller-runtime v0.11.1
@@ -161,7 +161,7 @@ require (
 	github.com/cpuguy83/go-md2man/v2 v2.0.1 // indirect
 	github.com/davecgh/go-spew v1.1.1 // indirect
 	github.com/dimchansky/utfbom v1.1.1 // indirect
-	github.com/docker/cli v20.10.10+incompatible // indirect
+	github.com/docker/cli v20.10.11+incompatible // indirect
 	github.com/docker/distribution v2.8.1+incompatible // indirect
 	github.com/docker/docker-credential-helpers v0.6.4 // indirect
 	github.com/docker/go-connections v0.4.0 // indirect
